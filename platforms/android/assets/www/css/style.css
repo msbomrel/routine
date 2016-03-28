@@ -1,0 +1,61 @@
+/* Empty. Add your own CSS if you like */
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{
+  background:red;
+  /*width:5px;
+  /*height:0px;*/
+}
+/*
+- OEF - CUSTOM INKBAR COLOR
+*/
+
+all-tabs {font-size:12px;
+height: 2px;
+  width: 2px;
+}
+/*.demo-tab {
+  color:white;
+}*/
+
+[scroll] {
+  position:fixed;
+}
+
+.intro {
+  /*left: auto;
+  top: auto;*/
+  width: auto;
+  height: auto;
+}
+
+.demo {
+ /* position: relative;*/
+  width: auto;
+  height: auto;
+  /*background-color: #cccccc;*/
+  /*margin-top: 40px;
+  margin-left: 0px;*/
+}
+/*
+.demo #content {
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  font-weight: 600;
+  border: 1px solid #999999;
+  border-top: none;
+}
+*/
+
+.btn1 {
+  /*color : rgb(49, 46, 46);*/
+  background-color:greenyellow;
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 15px;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  text-decoration:firebrick;
+  width: 80%;
+  height: 40%;
+}

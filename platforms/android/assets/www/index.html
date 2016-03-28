@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+    <!-- cordova script (this will be a 404 during development) -->
+    <link href="Materials/angular-material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="cordova.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/tabletop.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/controller.js"></script>
+
+
+
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  </head>
+
+<body ng-app="routineApp" ng-controller="GlobalController"  class="demo" ng-cloak="true">
+<div ng-controller="sideController">
+<div ng-controller="tabCtrl">
+  <md-toolbar scroll>
+  <div class="md-toolbar-tools">
+    <b>MY Routine {{semester}} </b>
+    <span flex> </span>
+    <md-button ng-click="openRightMenu()" class="md-icon-button" aria-label="Settings">
+      <md-icon md-svg-icon="img/menu.svg"></md-icon>
+    </md-button>
+  </div>
+  <md-tabs layout-fill class="md-primary" md-no-pagination="true" md-selected="selectedIndex">
+    <md-tab id="tab1">
+      <all-tabs class="demo-tab">
+        MON
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab2">
+      <all-tabs class="demo-tab">
+        TUE
+      </all-tabs>
+    </md-tab><script src="Materials/angular-touch.js"></script>
+    <md-tab id="tab3">
+      <all-tabs class="demo-tab">
+        WED
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab4">
+      <all-tabs class="demo-tab">
+        THU
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab5">
+      <all-tabs class="demo-tab">
+        FRI
+      </all-tabs>
+    </md-tab>
+  </md-tabs>
+</md-toolbar>
+    <div layout="column" flex>
+      <md-sidenav style="overflow-y: scroll" layout="column"  md-is-locked-open="false"
+                  class="md-sidenav-right md-whiteframe-z2"
+                  md-component-id="right" layout-fill style="height:500px;" ng-cloak=""  scroll>
+        <md-toolbar class="md-theme-indigo" layout-padding="">
+          <h1 class="md-display-1" class="md-toolbar-tools">MYN Routine</h1>
+        </md-toolbar>
+
+        <div ng-controller="GlobalController">
+          <!--<md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="nineteenA()"><b>2019 A</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="nineteenB()"><b>2019 B</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="eighteenA()"><b>2018 A</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="eighteenB()"><b>2018 B</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="seventeenA()"><b>2017 A</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="seventeenB()"><b>2017 B</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="sixteenA()"><b>2016 A</b></md-button>
+            </section>
+          </md-content>
+          <md-content>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-click="sixteenB()"><b>2016 B</b></md-button>
+            </section>
+          </md-content>-->
+          <br>
+          <br>
+          <md-input-container class="md-block" style="width: 80%" layout-align=" center">
+            <label><h2>Your Batch</h2> </label>
+            <md-select name="myModel" ng-model="myModel" required>
+              <md-option on-select="sixteenA()" value="1">2016 A</md-option>
+              <md-option on-select="sixteenB()" value="2">2016 B</md-option>
+              <md-option on-select="seventeenA()" value="3">2017A</md-option>
+              <md-option on-select="seventeenB()" value="4">2017 B</md-option>
+              <md-option on-select="eighteenA()" value="5">2018 A</md-option>
+              <md-option on-select="eighteenB()" value="6">2018 B</md-option>
+              <md-option on-select="nineteenA()" value="7">2019 A</md-option>
+              <md-option on-select="nineteenB()" value="8">2019 B</md-option>
+            </md-select>
+          </md-input-container>
+          <md-content>
+            <br>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="btn1" ng-click="update()"><b>UPDATE</b></md-button>
+            </section>
+          </md-content>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer>
+          <div layout="row" layout-align="center center">
+            <md-card>Developed by: Software Club</md-card>
+          </div>
+        </footer>
+
+      </md-sidenav>
+      </div>
+
+<div id="content"  ui-view flex md-swipe-left="onSwipeLeft()" md-swipe-right="onSwipeRight()">
+   </div>
+
+</div>
+</div>
+<!--angular material(for the better styles)-->
+<script src="Materials/angular-touch.js"></script>
+<script src="Materials/angular-ui-router.js"></script>
+<script src="Materials/angular-animate.js"></script>
+<script src="Materials/angular-aria.min.js"></script>
+<script src="Materials/angular-material.min.js"></script>
+
+</body>
+
+</html>

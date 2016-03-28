@@ -1,0 +1,40 @@
+<div ng-controller="tabCtrl">
+<md-toolbar scroll>
+  <div class="md-toolbar-tools">
+    <b>MY Routine  {{semester}} </b>
+    <span flex> </span>
+
+    <md-button ui-sref="home" class="md-icon-button" aria-label="Settings">
+      <md-icon md-svg-icon="img/menu.svg"></md-icon>
+    </md-button>
+  </div>
+  <md-tabs layout-fill class="md-primary" md-no-pagination="true" md-selected="selectedIndex">
+    <md-tab id="tab1">
+      <all-tabs class="demo-tab">
+        MON
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab2">
+      <all-tabs class="demo-tab">
+        TUE
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab3">
+      <all-tabs class="demo-tab">
+        WED
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab4">
+      <all-tabs class="demo-tab">
+        THU
+      </all-tabs>
+    </md-tab>
+    <md-tab id="tab5">
+      <all-tabs class="demo-tab">
+        FRI
+      </all-tabs>
+    </md-tab>
+  </md-tabs>
+</md-toolbar>
+</div>
+
