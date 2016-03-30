@@ -88,45 +88,43 @@ var app=angular
       })
 
   })
-*/
-
-    $urlRouterProvider.otherwise('/');
+*/$urlRouterProvider.otherwise('/');
     $stateProvider
-      .state('day0', {
-        url: "/day0",
-        templateUrl: "templates/monday.html"
-      })
       .state('day1', {
         url: "/day1",
-        templateUrl: "templates/tuesday.html"
+        templateUrl: "templates/monday.html"
       })
       .state('day2', {
         url: "/day2",
-        templateUrl: "templates/wednesday.html"
+        templateUrl: "templates/tuesday.html"
       })
       .state('day3', {
         url: "/day3",
-        templateUrl: "templates/thursday.html"
+        templateUrl: "templates/wednesday.html"
       })
       .state('day4', {
         url: "/day4",
+        templateUrl: "templates/thursday.html"
+      })
+      .state('day5', {
+        url: "/day5",
         templateUrl: "templates/friday.html"
       })
       /*.state('tabs', {*/
       /*  url: "/tabs",*/
       /*  templateUrl: "templates/tabs.html"*/
       /*})*/
-    $stateProvider
+    /*$stateProvider
       .state('home',{
         url: "/home",
         templateUrl:'templates/config.html'
-      })
-    $stateProvider
+      })*/
+    /*$stateProvider
       .state('sidenav',{
         url: "/sidenav",
         templateUrl:'templates/sidenav.html',
         controller:'sideController'
-      })
+      })*/
     ;
   })
 
@@ -138,9 +136,9 @@ var app=angular
         $scope.selectedIndex  = $scope.selectedIndex + 1;
       }
       // if you want to make all the tour
-      else{
+      /*else{
         $scope.selectedIndex  = 0;
-      }
+      }*/
     }
 
     $scope.onSwipeLeft = function () {
@@ -149,16 +147,14 @@ var app=angular
         $scope.selectedIndex  = $scope.selectedIndex - 1;
       }
       // if you want to make all the tour
-      else {
+      /*else {
         $scope.selectedIndex  = 4;
-      }
+      }*/
     }
 
-    $scope.$watch('selectedIndex', function(current) {
+    $scope.$watch('selectedIndex + 1', function(current) {
+        
       switch (current) {
-        case 0:
-          $location.url("/day0");
-          break;
         case 1:
           $location.url("/day1");
           break;
@@ -171,15 +167,23 @@ var app=angular
         case 4:
           $location.url("/day4");
           break;
+        case 5:
+          $location.url("/day5");
+          break;
       }
     });
   })
 
   .controller('sideController', function($scope, $mdSidenav,$log) {
   $scope.openRightMenu = function() {
+      var d= new Date();
+      var n= d.getDay();
     $mdSidenav('right').toggle()
       .then(function () {
         $log.debug("Toggle is trigerred");
+      })
+      .then(function () {
+          $log.debug(n);
       });
   };
 })

@@ -3,13 +3,13 @@
 <br>
 <br>
 <br>
-<ion-slide-page>
 <div ng-controller="GlobalController" layout="row">
 
   <div flex>
     <div class="demo-swipe">
+            <md-card class="special_class"><b>Today is : {{date | date:'yyyy-MMMM-dd'}}</b> </md-card>
       <md-card>
-        <h1> MONDAY  {{semester}}</h1>
+      <!--  <h1> MONDAY  {{semester}}</h1>-->
         <div ng-repeat="sub in subjects">
           <md-list-item>
             <div class="md-6-line">
@@ -25,5 +25,5 @@
     </div>
   </div>
 </div>
-</ion-slide-page>
+
 

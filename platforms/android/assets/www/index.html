@@ -14,10 +14,6 @@
     <script src="js/app.js"></script>
     <script src="js/factory.js"></script>
     <script src="js/controller.js"></script>
-
-
-
-
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
   </head>
@@ -110,27 +106,42 @@
               <md-button class="md-raised md-primary" ng-click="sixteenB()"><b>2016 B</b></md-button>
             </section>
           </md-content>-->
-          <br>
-          <br>
           <md-input-container class="md-block" style="width: 80%" layout-align=" center">
             <label><h2>Your Batch</h2> </label>
-            <md-select name="myModel" ng-model="myModel" required>
-              <md-option on-select="sixteenA()" value="1">2016 A</md-option>
-              <md-option on-select="sixteenB()" value="2">2016 B</md-option>
-              <md-option on-select="seventeenA()" value="3">2017A</md-option>
-              <md-option on-select="seventeenB()" value="4">2017 B</md-option>
-              <md-option on-select="eighteenA()" value="5">2018 A</md-option>
-              <md-option on-select="eighteenB()" value="6">2018 B</md-option>
-              <md-option on-select="nineteenA()" value="7">2019 A</md-option>
-              <md-option on-select="nineteenB()" value="8">2019 B</md-option>
+            <md-select name="myModel" ng-model="myModel">
+              <md-option onchange="sixteenA()" value="1">2016 A</md-option>
+              <md-option onchange="sixteenB()" value="2">2016 B</md-option>
+              <md-option onchange="seventeenA()" value="3">2017A</md-option>
+              <md-option onchange="seventeenB()" value="4">2017 B</md-option>
+              <md-option onchange="eighteenA()" value="5">2018 A</md-option>
+              <md-option onchange="eighteenB()" value="6">2018 B</md-option>
+              <md-option onchange="nineteenA()" value="7">2019 A</md-option>
+              <md-option onchange="nineteenB()" value="8">2019 B</md-option>
             </md-select>
           </md-input-container>
-          <md-content>
-            <br>
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-              <md-button class="btn1" ng-click="update()"><b>UPDATE</b></md-button>
-            </section>
-          </md-content>
+          <!--<md-button class="md-primary dropdown" ng-click="myDropdownIsActive=!myDropdownIsActive"
+                     ng-class="{active:myDropdownIsActive}">
+            Select your Batch
+            <ul class="dropdown-menu md-whiteframe-z1">
+              <li><md-button ng-click="seventeenA()">2017 A</md-button></li>
+              <li><md-button ng-click="seventeenB()">2017 B</md-button></li>
+              <li><md-button ng-click="seventeenA()">2017 A</md-button></li>
+              <li><md-button ng-click="seventeenB()">2017 B</md-button></li>
+
+            </ul>
+          </md-button>
+-->
+
+
+             <!-- <md-button class="md-raised md-primary" ng-click="seventeenA()"><b>2017 A</b></md-button>
+              <md-button class="md-raised md-primary" ng-click="seventeenB()"><b>2017 B</b></md-button>
+              <md-button class="md-raised md-primary" ng-click="eighteenA()"><b>2018 A</b></md-button>
+-->
+
+
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="btn1" ng-click="update()"><b>UPDATE</b></md-button>
+          </section>
         </div>
         <br>
         <br>

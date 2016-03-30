@@ -8,21 +8,23 @@ var app=angular
 
           var d = new Date();
           var n = d.getDay();
+        
+        $scope.date = new Date();
 
-      $scope.listofBatches=['2016 A', '2016 B', '2017 A', '2017 B', '2018 A', '2018 B', '2019 A', '2019 B'];
+      /*$scope.listofBatches=['2016 A', '2016 B', '2017 A', '2017 B', '2018 A', '2018 B', '2019 A', '2019 B'];
 
       $scope.$watch('selectedItem', function(newVal, oldVal){
         switch(newVal){
-          case '2016 A':
+          case '1':
             $scope.sixteenA();
             break;
-          case '2016 B':
+          case '2':
             $scope.sixteenB();
             break;
-          case '2017 A':
+          case '3':
             $scope.seventeenA();
             break;
-          case '2017 B':
+          case '':
             $scope.seventeenB();
             break;
           case '2018 A':
@@ -38,7 +40,7 @@ var app=angular
             $scope.nineteenB();
             break;
         }
-      })
+      })*/
 
       $scope.goToWhere= function () {
         $location.path('/day'+n);
@@ -91,7 +93,7 @@ var app=angular
             });
           $localStorage.sem=' 17 B';
           $localStorage.message=$localStorage.store_seventeenB;
-         /* $location.path('/day'+n);*/
+          $location.path('/day'+n);
         };
         $scope.sixteenA=function(){
             Class16A.query(function(data) {
@@ -113,7 +115,7 @@ var app=angular
         $scope.subjects=$localStorage.message;
         $scope.semester=$localStorage.sem;
 
-      $scope.monday=function(){
+      /*$scope.monday=function(){
         $location.path('/day1');
       };
       $scope.tuesday=function(){
@@ -127,7 +129,7 @@ var app=angular
       };
       $scope.friday=function(){
         $location.path('/day5');
-      };
+      };*/
 
       $scope.home= function () {
         $location.path('/');
