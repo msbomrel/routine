@@ -1,12 +1,10 @@
 /* Empty. Add your own CSS if you like */
-md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{
+/*md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{
   background:red;
-  /*width:5px;
-  /*height:0px;*/
+  !*width:5px;
+  !*height:0px;*!
 }
-/*
-- OEF - CUSTOM INKBAR COLOR
-*/
+!**/
 
 all-tabs {font-size:12px;
 height: 2px;
@@ -66,36 +64,4 @@ height: 2px;
     text-align: center;
     padding: 0 6px 0 6px;
     margin: 6px 8px 6px 8px;
-}
-
-
-.md-button.dropdown {
-  overflow: visible; /*reset*/
-}
-
-.dropdown .dropdown-menu {
-  max-width: 0;
-  position: absolute;
-  left: 40px;
-  top: 100%;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  overflow: hidden;
-  background-color: #fff;
-  list-style: none;
-  transition: min-width 0.2s ease-in-out, left 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
-
-.dropdown .dropdown-menu .md-button {
-  min-width: 100%;
-  border-radius: 0;
-  margin: 0;
-  padding: 6px 16px;
-}
-
-.dropdown.active .dropdown-menu {
-  max-width: 300px; /* set a maxwidth bigger than the widest element */
-  left: 0;
-  opacity: 1;
 }

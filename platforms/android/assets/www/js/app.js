@@ -3,6 +3,11 @@ var app=angular
   .module('routineApp',['ionic','ngStorage','ui.router','myFactory','myController','ngMaterial'])
 
   .run(function($rootScope, $ionicPlatform, $ionicHistory){
+    $ionicPlatform.ready(function() {
+      setTimeout(function() {
+        $cordovaSplashscreen.hide();
+      }, 500);
+    })
   $ionicPlatform.registerBackButtonAction(function(e){
     if ($rootScope.backButtonPressedOnceToExit) {
       ionic.Platform.exitApp();
@@ -30,66 +35,9 @@ var app=angular
 })
 
   .config(function($stateProvider, $urlRouterProvider){
+      $urlRouterProvider.otherwise('/');
 
-    /*$urlRouterProvider.otherwise('/tabbar');
-
-    $stateProvider
-      .state('home',{
-        url: "/home",
-        templateUrl:'templates/config.html'
-      })
-
-      .state('tabbar',{
-        url: "/tabbar",
-        templateUrl:'templates/tabs.html',
-        controller:'GlobalController'
-      })
-
-      .state('day0',{
-        url:"/day0",
-        templateUrl:'templates/monday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day1',{
-        url:"/day1",
-        templateUrl:'templates/monday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day2',{
-        url:"/day2",
-        templateUrl:'templates/tuesday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day3',{
-        url:"/day3",
-        templateUrl:'templates/wednesday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day4',{
-        url:"/day4",
-        templateUrl:'templates/thursday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day5',{
-        url:"/day5",
-        templateUrl:'templates/friday.html',
-        controller:'GlobalController'
-      })
-
-      .state('day6',{
-        url:"/day6",
-        templateUrl:'templates/monday.html',
-        controller:'GlobalController'
-      })
-
-  })
-*/$urlRouterProvider.otherwise('/');
-    $stateProvider
+      $stateProvider
       .state('day1', {
         url: "/day1",
         templateUrl: "templates/monday.html"
@@ -129,16 +77,18 @@ var app=angular
   })
 
   .controller('tabCtrl', function($scope, $location) {
-   /* $scope.selectedIndex = 0;*/
+      var d= new Date();
+      var n= d.getDay();
+    $scope.selectedIndex = n - 1;
 
     $scope.onSwipeRight = function (){
       if ($scope.selectedIndex < 4){
         $scope.selectedIndex  = $scope.selectedIndex + 1;
       }
       // if you want to make all the tour
-      /*else{
+      else{
         $scope.selectedIndex  = 0;
-      }*/
+      }
     }
 
     $scope.onSwipeLeft = function () {
@@ -147,27 +97,25 @@ var app=angular
         $scope.selectedIndex  = $scope.selectedIndex - 1;
       }
       // if you want to make all the tour
-      /*else {
+      else {
         $scope.selectedIndex  = 4;
-      }*/
+      }
     }
-
-    $scope.$watch('selectedIndex + 1', function(current) {
-        
+    $scope.$watch('selectedIndex', function(current) {
       switch (current) {
-        case 1:
+        case 0:
           $location.url("/day1");
           break;
-        case 2:
+        case 1:
           $location.url("/day2");
           break;
-        case 3:
+        case 2:
           $location.url("/day3");
           break;
-        case 4:
+        case 3:
           $location.url("/day4");
           break;
-        case 5:
+        case 4:
           $location.url("/day5");
           break;
       }
