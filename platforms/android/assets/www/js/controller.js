@@ -13,15 +13,13 @@ var app=angular
         $scope.selectChanged = function(){
             if ($scope.someVal == 1){
                 $scope.update();
-                location.reload();
                 $scope.sixteenA();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 2){
                 $scope.update();
-                location.reload();
                 $scope.sixteenB();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 3){
                 $scope.update();
