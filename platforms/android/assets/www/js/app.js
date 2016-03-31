@@ -6,8 +6,8 @@ var app=angular
     $ionicPlatform.ready(function() {
       setTimeout(function() {
         $cordovaSplashscreen.hide();
-      }, 500);
-    })
+      }, 100);
+    });
   $ionicPlatform.registerBackButtonAction(function(e){
     if ($rootScope.backButtonPressedOnceToExit) {
       ionic.Platform.exitApp();
@@ -26,7 +26,7 @@ var app=angular
       );
       setTimeout(function(){
         $rootScope.backButtonPressedOnceToExit = false;
-      },1000);
+      },100);
     }
     e.preventDefault();
     return false;

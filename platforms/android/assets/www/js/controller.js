@@ -9,36 +9,47 @@ var app=angular
         var d = new Date();
         var n = d.getDay();
         $scope.date = new Date();
+
         $scope.selectChanged = function(){
             if ($scope.someVal == 1){
+                $scope.update();
+                location.reload();
                 $scope.sixteenA();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 2){
+                $scope.update();
+                location.reload();
                 $scope.sixteenB();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 3){
+                $scope.update();
                 $scope.seventeenA();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 4){
+                $scope.update();
                 $scope.seventeenB();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 5){
+                $scope.update();
                 $scope.eighteenA();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 6){
+                $scope.update();
                 $scope.eighteenB();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else if($scope.someVal == 7){
+                $scope.update();
                 $scope.nineteenA();
-                $window.location.reload();
+                //$window.location.reload();
             }
             else {
+                $scope.update();
                 $scope.nineteenB();
             }
         };
@@ -102,7 +113,7 @@ var app=angular
             });
             $localStorage.sem = ' 16 A';
             $localStorage.message = $localStorage.store_sixteenA;
-            /*$location.path('/day' + n);*/
+            //$location.path('/day' + n);
         };
         $scope.sixteenB = function () {
             Class16B.query(function (data) {
@@ -110,16 +121,22 @@ var app=angular
             });
             $localStorage.sem = ' 16 B';
             $localStorage.message = $localStorage.store_sixteenB;
-            /*$location.path('/day' + n);*/
+            //$location.path('/day' + n);
+        };
+        $scope.getInReal=function(){
+            $scope.subjects = $localStorage.message;
+            $scope.semester = $localStorage.sem;
         };
 
         $scope.subjects = $localStorage.message;
         $scope.semester = $localStorage.sem;
 
         $scope.update = function () {
-            alert("I am in update");
-            location.reload();
-            alert("I am updated");
+            $scope.sixteenA();$scope.sixteenB();$scope.seventeenA();$scope.seventeenB();$scope.eighteenA();$scope.eighteenB();$scope.nineteenA();$scope.nineteenB();
+            $scope.getInReal();
+            //alert("I am in update");
+            //location.reload();
+            //alert("I am updated");
         }
     })
     ;
