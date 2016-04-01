@@ -3,11 +3,6 @@ var app=angular
   .module('routineApp',['ionic','ngStorage','ui.router','myFactory','myController','ngMaterial'])
 
   .run(function($rootScope, $ionicPlatform, $ionicHistory){
-    $ionicPlatform.ready(function() {
-      setTimeout(function() {
-        $cordovaSplashscreen.hide();
-      }, 100);
-    });
   $ionicPlatform.registerBackButtonAction(function(e){
     if ($rootScope.backButtonPressedOnceToExit) {
       ionic.Platform.exitApp();

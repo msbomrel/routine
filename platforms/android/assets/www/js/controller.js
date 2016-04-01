@@ -3,8 +3,9 @@
  */
 var app=angular
     .module('myController',[])
-    .controller('GlobalController',function ($scope,$location,$localStorage,$log,$window,
-                                             Class19A,Class19B,Class18A,Class18B,Class17A,Class17B,Class16A,Class16B) {
+    .controller('GlobalController',
+        function ($scope,$location,$localStorage,$log,$window,
+                  Class19A,Class19B,Class18A,Class18B,Class17A,Class17B,Class16A,Class16B) {
 
         var d = new Date();
         var n = d.getDay();
@@ -24,31 +25,32 @@ var app=angular
             else if($scope.someVal == 3){
                 $scope.update();
                 $scope.seventeenA();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 4){
                 $scope.update();
                 $scope.seventeenB();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 5){
                 $scope.update();
                 $scope.eighteenA();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 6){
                 $scope.update();
                 $scope.eighteenB();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else if($scope.someVal == 7){
                 $scope.update();
                 $scope.nineteenA();
-                //$window.location.reload();
+                $window.location.reload();
             }
             else {
                 $scope.update();
                 $scope.nineteenB();
+                $window.location.reload();
             }
         };
         
@@ -130,11 +132,11 @@ var app=angular
         $scope.semester = $localStorage.sem;
 
         $scope.update = function () {
-            $scope.sixteenA();$scope.sixteenB();$scope.seventeenA();$scope.seventeenB();$scope.eighteenA();$scope.eighteenB();$scope.nineteenA();$scope.nineteenB();
+            $scope.sixteenA();$scope.sixteenB();
+            $scope.seventeenA();$scope.seventeenB();
+            $scope.eighteenA();$scope.eighteenB();
+            $scope.nineteenA();$scope.nineteenB();
             $scope.getInReal();
-            //alert("I am in update");
-            //location.reload();
-            //alert("I am updated");
         }
     })
     ;
